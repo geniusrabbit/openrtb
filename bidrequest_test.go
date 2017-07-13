@@ -1,14 +1,13 @@
 package openrtb
 
 import (
-	"encoding/json"
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
 )
 
 var _ = Describe("BidRequest", func() {
 	var subject *BidRequest
-
+	privacyPolicy := 1
 	BeforeEach(func() {
 		err := fixture("breq.banner", &subject)
 		Expect(err).NotTo(HaveOccurred())
@@ -29,17 +28,18 @@ var _ = Describe("BidRequest", func() {
 			Imp: []Impression{
 				{
 					ID:     "1",
-					Secure: json.Number("1"),
-					Banner: &Banner{W: 300, H: 250, Pos: AdPosAboveFold, BAttr: []int{13}},
+					Secure: 1,
+					Banner: &Banner{W: 300, H: 250, Pos: AdPosAboveFold, BAttr: []int{CreativeAttributeUserInitiated}},
 				},
 			},
 			Site: &Site{
 				Inventory: Inventory{
-					ID:        "234563",
-					Name:      "Site ABCD",
-					Domain:    "siteabcd.com",
-					Cat:       []string{"IAB2-1", "IAB2-2"},
-					Publisher: &Publisher{ID: "pub12345", Name: "Publisher A"},
+					ID:            "234563",
+					Name:          "Site ABCD",
+					Domain:        "siteabcd.com",
+					Cat:           []string{"IAB2-1", "IAB2-2"},
+					Publisher:     &Publisher{ID: "pub12345", Name: "Publisher A"},
+					PrivacyPolicy: &privacyPolicy,
 					Content: &Content{
 						Keywords: "keyword a,keyword b,keyword c",
 					},

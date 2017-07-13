@@ -9,7 +9,25 @@ const (
 )
 
 // 5.3 Creative Attributes
-// TODO
+const (
+	CreativeAttributeAudioAdAutoPlay                 = 1
+	CreativeAttributeAudioAdUserInitiated            = 2
+	CreativeAttributeExpandableAuto                  = 3
+	CreativeAttributeExpandableUserInitiatedClick    = 4
+	CreativeAttributeExpandableUserInitiatedRollover = 5
+	CreativeAttributeInBannerVideoAdAutoPlay         = 6
+	CreativeAttributeInBannerVideoAdUserInitiated    = 7
+	CreativeAttributePop                             = 8
+	CreativeAttributeProvocativeOrSuggestiveImagery  = 9
+	CreativeAttributeExtremeAnimation                = 10
+	CreativeAttributeSurveys                         = 11
+	CreativeAttributeTextOnly                        = 12
+	CreativeAttributeUserInitiated                   = 13
+	CreativeAttributeWindowsDialogOrAlert            = 14
+	CreativeAttributeHasAudioWithPlayer              = 15
+	CreativeAttributeAdProvidesSkipButton            = 16
+	CreativeAttributeAdobeFlash                      = 17
+)
 
 // 5.4 Ad Position
 const (
@@ -66,6 +84,15 @@ const (
 	VideoPlaybackAutoSoundOff = 2
 	VideoPlaybackClickToPlay  = 3
 	VideoPlaybackMouseOver    = 4
+)
+
+// 5.9 Video Placement Types (Spec 2.5)
+const (
+	VideoPlacementInStream     = 1
+	VideoPlacementInBanner     = 2
+	VideoPlacementInArticle    = 3
+	VideoPlacementInFeed       = 4
+	VideoPlacementInterstitial = 5
 )
 
 // 5.10 Video Start Delay

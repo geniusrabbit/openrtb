@@ -23,11 +23,14 @@ type BidRequest struct {
 	AuctionType int          `json:"at"`                // Auction type, where 1 = First Price, 2 = Second Price Plus. Exchange-specific auction types can be defined using values greater than 500.
 	TMax        int          `json:"tmax,omitempty"`    // Maximum amount of time in milliseconds to submit a bid
 	WSeat       []string     `json:"wseat,omitempty"`   // Array of buyer seats allowed to bid on this auction
+	BSeat       []string     `json:"bseat,omitempty"`   // Array of buyer seats blocked to bid on this auction
+	WLang       []string     `json:"wlang,omitempty"`   // Array of languages for creatives using ISO-639-1-alpha-2
 	AllImps     int          `json:"allimps,omitempty"` // Flag to indicate whether exchange can verify that all impressions offered represent all of the impressions available in context, Default: 0
 	Cur         []string     `json:"cur,omitempty"`     // Array of allowed currencies
 	Bcat        []string     `json:"bcat,omitempty"`    // Blocked Advertiser Categories.
 	BAdv        []string     `json:"badv,omitempty"`    // Array of strings of blocked toplevel domains of advertisers
 	BApp        []string     `json:"bapp,omitempty"`    // Block list of applications by their platform-specific exchange-independent application identifiers. On Android, these should be bundle or package names (e.g., com.foo.mygame).  On iOS, these are numeric IDs.
+	Source      *Source      `json:"source,omitempty"`  // A Source object that provides data about the inventory source and which entity makes the final decision
 	Regs        *Regulations `json:"regs,omitempty"`
 	Ext         Extension    `json:"ext,omitempty"`
 

@@ -36,8 +36,9 @@ var _ = Describe("Device", func() {
 			OS:         "iOS",
 			OSVer:      "6.1",
 			JS:         1,
-			ConnType:   3,
-			DeviceType: 1,
+			ConnType:   ConnTypeCell,
+			MCCMNC:     "722-341",
+			DeviceType: DeviceTypeMobile,
 		}))
 	})
 })
